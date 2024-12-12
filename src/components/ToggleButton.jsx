@@ -8,7 +8,7 @@ function ToggleButton() {
     setIsOn(newValue);
 
     try {
-      await fetch("http://localhost:5000/toggle", {
+      await fetch("https://toggle-server.onrender.com/toggle", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ value: newValue ? 1 : 0 }),
@@ -19,10 +19,9 @@ function ToggleButton() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/toggle")
+    fetch("https://toggle-server.onrender.com/toggle")
       .then((res) => res.json())
       .then((data) => {
-        
         if (data && typeof data.value === "number") {
           setIsOn(data.value === 1);
         }
