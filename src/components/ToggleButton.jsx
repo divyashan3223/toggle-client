@@ -32,21 +32,23 @@ function ToggleButton() {
   }, []);
 
   return (
-    <button
-      onClick={handleToggle}
-      className={`px-6 py-3 rounded-full font-bold transition-all duration-500 transform relative overflow-hidden focus:outline-none ${
-        isOn
-          ? "bg-gradient-to-r from-green-400 to-green-600 text-white shadow-lg scale-110"
-          : "bg-gradient-to-r from-gray-400 to-gray-600 text-gray-100 shadow-md scale-100"
-      } hover:shadow-2xl hover:scale-115 focus:ring-4 focus:ring-green-300`}
-    >
-      <span
-        className={`absolute inset-0 w-full h-full transition-all duration-700 rounded-full ${
-          isOn ? "bg-green-100 opacity-10" : "bg-gray-100 opacity-5"
-        }`}
-      />
-      <span className="relative">{isOn ? "ON" : "OFF"}</span>
-    </button>
+    <div className="flex justify-center items-center h-96">
+      <button
+        onClick={handleToggle}
+        className={`px-6 py-3 rounded-full font-bold transition-all duration-500 transform relative overflow-hidden focus:outline-none ${
+          isOn
+            ? "bg-gradient-to-r from-green-400 to-green-600 text-white shadow-lg scale-110"
+            : "bg-gradient-to-r from-gray-400 to-gray-600 text-gray-100 shadow-md scale-100"
+        } hover:shadow-2xl hover:scale-115 focus:ring-4 focus:ring-green-300`}
+      >
+        <span
+          className={`absolute inset-0 w-full h-full transition-all duration-700 rounded-full ${
+            isOn ? "bg-green-100 opacity-10" : "bg-gray-100 opacity-5"
+          }`}
+        />
+        <span className="relative">{isOn ? "ON" : "OFF"}</span>
+      </button>
+    </div>
   );
 }
 
