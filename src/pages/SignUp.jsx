@@ -1,11 +1,9 @@
-
+import React, { useState } from "react";
 
 const SignUp = () => {
-
-
   const [data, setData] = useState({
     name: "",
-    email:'',
+    email: "",
     password: "",
   });
 
@@ -15,7 +13,10 @@ const SignUp = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black">
-      <form className="w-full max-w-md p-6 bg-white rounded-lg shadow-md" onSubmit={handelSubmit}>
+      <form
+        className="w-full max-w-md p-6 bg-white rounded-lg shadow-md"
+        onSubmit={handelSubmit}
+      >
         <h2 className="mb-6 text-2xl font-bold text-center text-gray-800">
           Sign Up
         </h2>
@@ -49,7 +50,6 @@ const SignUp = () => {
           required
           value={data.email}
           onChange={(e) => setData({ ...data, email: e.target.value })}
-
           className="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
 
